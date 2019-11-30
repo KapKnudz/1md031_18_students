@@ -61,11 +61,11 @@
           <h2 id="Gästinfo"> Gästinformation </h2>
         </div>
         här kommer viktig information.
-        <h3> Delivery information </h3>
+        <h3> Leveransinformation </h3>
         <form>
           <fieldset>
             <p>
-              <label for="name">Full name</label><br>
+              <label for="name">Fullständingt namn</label><br>
               <input v-model="name" id="name" name="n" required="required" placeholder="First and last name">
             </p>
             <p>
@@ -84,7 +84,7 @@
 
           <fieldset>
             <p>
-              <label for="payment">Payment options </label> <br>
+              <label for="payment">Betalningsmöjligheter </label> <br>
               <select v-model="payment" id="payment" name="pay">
                 <option>Credit card</option>
                 <option>Bank transfer</option>
@@ -96,11 +96,11 @@
           </fieldset>
 
           <fieldset>
-            <label>Gender</label><br />
+            <label>Kön</label><br />
 
-            <input type="radio" name="gender" v-model="picked" value="Female"> Female <br>
-            <input type="radio" name="gender" v-model="picked" value="Male"> Male <br>
-            <input type="radio" name="gender" v-model="picked" value="Other"> Other <br>
+            <input type="radio" name="gender" v-model="picked" value="Female"> Kvinna <br>
+            <input type="radio" name="gender" v-model="picked" value="Male"> Man <br>
+            <input type="radio" name="gender" v-model="picked" value="Other"> Annat <br>
 
             <h1> Vänligen välj vart du vill ha din order levererad </h1>
             <a href="/dispatcher" target="_blank"> Öppna kartan i en ny flik </a>.
