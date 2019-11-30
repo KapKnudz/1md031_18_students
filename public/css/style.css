@@ -86,9 +86,7 @@ display: grid;
   background-color: black;
 }
 
-input[type="OrderConfirmation"] {
-  height: .7em;
-  width: .7em;
+#OrderConfirmation {
 }
 
 fieldset {
@@ -101,6 +99,7 @@ button {
 
 button:hover {
   background-color: yellow;
+  cursor: crosshair;
 }
 
 hr {
