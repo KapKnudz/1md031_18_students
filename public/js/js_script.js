@@ -46,4 +46,4 @@ if ('lactose' === true in order)
   console.log("Ja det är laktos i");
 else {
   console.log("Nej inget laktos");
-} */
+} */ 
