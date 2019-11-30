@@ -55,4 +55,4 @@ var vm = new Vue({
             document.getElementById("pressedButton").style.display = "block";
     }
   }
-});
+}); 
