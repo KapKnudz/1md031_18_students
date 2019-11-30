@@ -49,3 +49,4 @@ var burgers = [{
     "b_image": "https://img.buzzfeed.com/buzzfeed-static/static/2015-02/21/7/enhanced/webdr03/original-17379-1424521461-3.jpg?downsize=700%3A%2A&output-quality=auto&output-format=auto",
   }
 ]
+ 
