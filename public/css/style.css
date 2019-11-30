@@ -1,0 +1,108 @@
+@import 'https://fonts.googleapis.com/css?family=Pacifico|Dosis';
+@font-face { font-family: "SF Mono"; font-weight: 200; font-style: normal; src: url(file:///Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-Light.otf); }
+
+
+body {
+  font-family: "SF Mono";
+  font-weight:300;
+  font-style: italic;
+
+  font-size: 18px;
+  padding-top: auto;
+  color: GREEN;
+  /* SIZE IN PIXELS */
+  background-color: black;
+  font-size-adjust: auto;
+  float: none;
+  width: 100%;
+}
+.myWrapper{
+display: grid;
+    grid-gap: 0.1em;
+    grid-template-columns: repeat(auto-fit, 13em);
+    font-size: 1.8em;
+}
+#rubrik {
+  position:relative;
+  padding: 150px;
+  font-size: 50px;
+  color: white;
+}
+
+#huvudbild {
+  opacity: 0.5;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+}
+
+#vueId {
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: auto auto auto;
+  background-color: #fff;
+  color: #444;
+}
+
+.myWrapper {
+  background-color: black;
+  color: #fff;
+  border-radius: 0px;
+  padding: 20px;
+  font-size: 150%;
+  text-align: center;
+  font-family: 'Tomorrow', sans-serif;
+  font-size: 22px;
+}
+}
+
+.a {
+  < grid-column: 1;
+  grid-row: 1;
+}
+
+.b {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.c {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.Ingredients {
+  /* CLASS = .CLASS_NAME */
+  color: #ff5500;
+  background-color: black;
+  font-style: red serif;
+}
+
+.myID {
+  /* ID = #ID_NAME */
+  color: #FFFAF0;
+  /* WHITE COLOR */
+  background-color: black;
+}
+
+input[type="OrderConfirmation"] {
+  height: .7em;
+  width: .7em;
+}
+
+fieldset {
+  border: 2px solid #ff9900;
+}
+
+button {
+  margin: 20px;
+}
+
+button:hover {
+  background-color: yellow;
+}
+
+hr {
+  border: 1px solid #ff9900;
+}
