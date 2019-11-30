@@ -1,9 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>DELI-VERY</title>
-    </head>
-    <body>
-        <h1>Hello World!!!</h1>
-    </body>
+
+<head>
+  <script type="text/javascript" src="/js/menu.js"></script>
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="https://vuejs.org/js/vue.js"></script>
+  <script src="/js/vue_script.js" defer></script>
+  <script src="/js/js_script.js" defer></script>
+  <link rel="stylesheet" type="text/css" href=/css/style.css />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/deli-very.css">
+
+
+
+  <title>www.KnudHouse.no</title>
+
+  <header id="rubrik" v-bind:title="arbitraryVariableName">
+    <h2>
+      Välkommna till Knudburgers!
+      <br />
+      <br />
+    </h2><img id="huvudbild" src="https://parklanenewyork.com/sites/default/files/styles/masthead/public/masthead/Shrimp%20dinner.jpg?h=8abcec71&itok=AJLbkf-q" alt="Hamburgar restaurant">
+  </header>
+</head>
+
+<body>
+  <main>
+    <div id="vueMain">
+
+      <section>
+        <h2>Välj valfri burgare </h2>
+        {{ arbitraryVariableName }}
+      </section>
+
+      <div class="myWrapper">
+
+        <div v-for="burger in vueBurg" class="burger-item">
+          {{ burger.name }}
+          <input type="checkbox" id="checkbox" v-model="chosenBurger" v-bind:value="burger.name">
+          <img v-bind:src='burger.b_image' width="200">
+          <ul>
+            <li v-for="ingredient in burger.ingredients"> {{ingredient}}
+            </li>
+            <li v-if="burger.gluten">
+              Innehåller gluten
+            </li>
+            <li v-if="burger.lactos">
+              Innehåler laktos
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+
+      <section id="OrderConfirmation">
+
+
+        <div id="Gästinf">
+          <h2 id="Gästinfo"> Gästinformation </h2>
+        </div>
+        här kommer viktig information.
+        <h3> Delivery information </h3>
+        <form>
+          <fieldset>
+            <p>
+              <label for="name">Full name</label><br>
+              <input v-model="name" id="name" name="n" required="required" placeholder="First and last name">
+            </p>
+            <p>
+              <label for="email">Email</label><br>
+              <input v-model="email" type="text" id="email" name="em" placeholder="Email address">
+            </p>
+            <!--  <p>
+              <label for="street">Street</label><br>
+              <input type="text" id="street" name="st" required="required" placeholder="Street name">
+            </p>
+            <p>
+              <label for="house">House</label><br>
+              <input type="number" id="house" name="ho" required="required" placeholder="House number">
+            </p> -->
+          </fieldset>
+
+          <fieldset>
+            <p>
+              <label for="payment">Payment options </label> <br>
+              <select v-model="payment" id="payment" name="pay">
+                <option>Credit card</option>
+                <option>Bank transfer</option>
+                <option>Swish</option>
+                <option>Prepaid cards</option>
+                <option>Ewallet</option>
+              </select>
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <label>Gender</label><br />
+
+            <input type="radio" name="gender" v-model="picked" value="Female"> Female <br>
+            <input type="radio" name="gender" v-model="picked" value="Male"> Male <br>
+            <input type="radio" name="gender" v-model="picked" value="Other"> Other <br>
+
+            <h1> Vänligen välj vart du vill ha din order levererad </h1>
+            <a href="/dispatcher" target="_blank"> Öppna kartan i en ny flik </a>.
+
+            <div class="view-box">
+              <div id="dots" v-on:click="displayOrder">
+                <div v-bind:style="{ left: deliveryLocation.x +'px', top: deliveryLocation.y + 'px'}">
+                  T
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+
+        <!--    <input type="radio" name="gender" value="male" id="female" choice />
+            <label class="choice" for="Male">Male</label><br />
+
+            <input type="radio" name="gender" value="female" id="female" />
+            <label class="choice" for="design">Female</label><br />
+
+            <input type="radio" name="gender" value="non binary" id="non binary" />
+            <label class="choice" for="non binary">Non binary</label><br />
+
+            <input type="radio" name="gender" value="undisclosed" id="undisclosed" checked />
+            <label class="choice" for="undisclosed">Undisclosed</label><br /> -->
+        <div id="orderButton">
+
+          <button type="sumbit" v-on:click="addOrder">
+            <img src="https://previews.123rf.com/images/maryvalery/maryvalery1702/maryvalery170200320/72372809-lover-fast-food-man-and-hamburger-on-tandem-guy-and-burger-lovers-of-cycling-man-rolls-bicycle-roman.jpg" width="40" height="40"
+              alt="Place order!">
+            Slutför din order!
+          </button>
+        </div>
+
+      </section>
+
+      <p class="orderedItems" id="pressedButton" style="display:none;">
+        Tack för din order! Orderinfo: <br>
+        Burgers: {{chosenBurger}} <br>
+        Name: {{name}} <br>
+        E-mail: {{email}} <br>
+        Payment method: {{payment}} <br>
+        Gender: {{picked}} <br>
+        Location: {{deliveryLocation}}
+      </p>
+
+
+      <hr>
+    </div>
+  </main>
+  <footer>
+    © Knudas Burger Inc
+  </footer>
+
+
+</body>
+
 </html>
